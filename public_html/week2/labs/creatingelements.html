@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Creating Elements</title>
+<style type="text/css">
+	.border{border:1px solid black;}
+</style>
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+	//Use this Array of objects to complete the assignment.
+	let people =[
+		{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
+		{first:"Freddy", last:"Krueger", credit:"A Nightmare on Elm Street" },
+		{first:"Roger", last:"Rabbit", credit:"Who Framed Roger Rabbit" },
+		{first:"Kevin", last:"McCallister", credit:"Home Alone" },
+		{first:"Godzilla", last:"King of The Monsters", credit:"Godzilla" },
+		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
+		{first:"Marion", last:"Cobretti", credit:"Cobra" }
+	];
+        
+
+        for (let index in people){
+            
+               let tempDiv = document.createElement('div');//CREATE DIV
+               
+               let p = document.createElement('p');//CREATE EACH PARAGRAPH TAG/ELEMENT SEPERATELY MUST USE DIFF VAR
+               let textnode = document.createTextNode(people[index].first); //CREATE EACH TEXTNODE SEPERATELY MUST USE DIFF VAR
+               
+               let p2 = document.createElement('p');
+               let textnode2 = document.createTextNode(people[index].last);
+               
+               let p3 = document.createElement('p');
+               let textnode3 = document.createTextNode(people[index].credit);
+               
+               p.appendChild(textnode);//APPEND THE TEXTNODE YOU MADE TO THE CORRECT VARIABLE PARAGRAPH
+               p2.appendChild(textnode2);
+               p3.appendChild(textnode3);
+               
+               tempDiv.appendChild(p);//APPEND THE PARAGRAPH TO THE DIV 
+               tempDiv.appendChild(p2);
+               tempDiv.appendChild(p3);
+              
+               
+               tempDiv.classList.add('border');//ADD BORDER AND STYLES TO DIV
+               
+               tempDiv.setAttribute("id", String(index)); //SETS AN INDEX IN THE CONSOLE VIEW 
+               
+               document.body.appendChild(tempDiv); //APPEND THE DIV TO THE WHOLE DOCUMENT.BODY.APPENDCHILD
+               
+               
+               
+               console.log(people[index]);
+               console.log(`${people[index].first}, ${people[index].last}, ${people[index].credit}`);
+                     //COUT THE ACTUAL LINED ONTO THE PAGE 
+              
+        }
+     
+      //THINK 1, 2, 3 THEN GO BACKWARDS APENDING IT ALL 3, 2, 1
+      //CREATE DIV TO HOLD 
+	
+</script>
+
+</html>
